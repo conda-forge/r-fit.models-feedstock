@@ -1,4 +1,6 @@
 {% set version = '0.5-14' %}
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-fit.models
@@ -7,12 +9,13 @@ package:
 source:
   fn: fit.models_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/fit.models_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/fit.models/fit.models_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/fit.models_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/fit.models/fit.models_{{ version }}.tar.gz
   sha256: 93b9d119e97b36c648a19c891fc5e69f5306eb5b9bac16bf377555057afd4b6e
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -20,21 +23,22 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-lattice
-
   run:
     - r-base
     - r-lattice
 
 test:
   commands:
-    - $R -e "library('fit.models')"  # [not win]
+    - $R -e "library('fit.models')"           # [not win]
     - "\"%R%\" -e \"library('fit.models')\""  # [win]
 
 about:
   home: https://CRAN.R-project.org/package=fit.models
-  license: GPL-2
+  license: GPL-2 and GPL-3
   summary: The fit.models function and its associated methods (coefficients, print, summary,
     plot, etc.) were originally provided in the robust package to compare robustly and
     classically fitted model objects. The aim of the fit.models package is to separate
@@ -42,10 +46,15 @@ about:
     extend it to support fitting methods (e.g., classical, robust, Bayesian, regularized,
     etc.) more generally.
   license_family: GPL
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
 
 extra:
   recipe-maintainers:
+    - johanneskoester
     - bgruening
     - daler
-    - johanneskoester
+    - jdblischak
+    - cbrueffer
+    - dbast
     - rvalieris
