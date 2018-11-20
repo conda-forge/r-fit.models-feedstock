@@ -14,9 +14,9 @@ source:
   sha256: 93b9d119e97b36c648a19c891fc5e69f5306eb5b9bac16bf377555057afd4b6e
 
 build:
+  noarch: generic
   merge_build_host: True  # [win]
-  number: 1
-  skip: true  # [win32]
+  number: 1001
   rpaths:
     - lib/R/lib/
     - lib/
@@ -46,8 +46,7 @@ about:
     extend it to support fitting methods (e.g., classical, robust, Bayesian, regularized,
     etc.) more generally.
   license_family: GPL
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:

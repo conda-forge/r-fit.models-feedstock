@@ -14,9 +14,8 @@ Summary: The fit.models function and its associated methods (coefficients, print
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-fit.models-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-fit.models-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/r-fit.models-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-fit.models-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-fit.models-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-fit-models-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-fit.models-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-fit.models-feedstock)
 
 Current release info
 ====================
