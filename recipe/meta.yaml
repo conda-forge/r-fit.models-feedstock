@@ -1,4 +1,4 @@
-{% set version = "0.63" %}
+{% set version = "0.64" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/fit.models_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/fit.models/fit.models_{{ version }}.tar.gz
-  sha256: b6af4e6a75cd4d78babf9015b7e88907a0009e81c01d22aac5d9e9679f763973
+  sha256: f70806bfa85a05337fa5a665264d640e307584714a07a329fbe96c86b0e864da
 
 build:
   noarch: generic
@@ -38,19 +38,14 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=fit.models
-  license: GPL-2 and GPL-3
+  license: GPL-2.0-or-later
   summary: The fit.models function and its associated methods (coefficients, print, summary, plot, etc.) were originally provided in the robust package to compare robustly and classically fitted model objects. The aim of the fit.models package is to separate this fitted model object comparison functionality from the robust
     package and to extend it to support fitting methods (e.g., classical, robust, Bayesian, regularized, etc.) more generally.
   license_family: GPL
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
     - rvalieris
