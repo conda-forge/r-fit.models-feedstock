@@ -38,19 +38,14 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=fit.models
-  license: GPL-2 and GPL-3
+  license: GPL-2.0-or-later
   summary: The fit.models function and its associated methods (coefficients, print, summary, plot, etc.) were originally provided in the robust package to compare robustly and classically fitted model objects. The aim of the fit.models package is to separate this fitted model object comparison functionality from the robust
     package and to extend it to support fitting methods (e.g., classical, robust, Bayesian, regularized, etc.) more generally.
   license_family: GPL
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
     - rvalieris
