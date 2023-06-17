@@ -1,11 +1,11 @@
-About r-fit.models
-==================
+About r-fit.models-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-fit.models-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=fit.models
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-fit.models-feedstock/blob/main/LICENSE.txt)
 
 Summary: The fit.models function and its associated methods (coefficients, print, summary, plot, etc.) were originally provided in the robust package to compare robustly and classically fitted model objects. The aim of the fit.models package is to separate this fitted model object comparison functionality from the robust package and to extend it to support fitting methods (e.g., classical, robust, Bayesian, regularized, etc.) more generally.
 
